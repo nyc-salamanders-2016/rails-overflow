@@ -9,6 +9,27 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><%= 'eat'.split('').shuffle.join %>Overflow</a>
+      <ul class="nav navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="/">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/questions">questions</a></li>
+        <% if logged_in? %>
+          <li class="nav-item"><a class="nav-link" href="/questions/new">ASK!</a></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav pull-xs-right">
+        <% if logged_in? %>
+          <li class="nav-item"><a class="nav-link" href="/users/logout">sign out</a></li>
+          <li class="nav-item"><a class="nav-link" href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+        <% else %>
+          <li class="nav-item"><a class="nav-link" href="/users/new">register</a></li>
+          <li class="nav-item"><a class="nav-link" href="/users/login">sign in</a></li>
+        <% end %>
+      </ul>
+   </div>
+  </nav>
     <%= yield %>
   </body>
 </html>
