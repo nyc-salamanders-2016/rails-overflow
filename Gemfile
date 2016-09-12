@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'better_errors'
 end
 
 group :development do

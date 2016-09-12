@@ -6,12 +6,12 @@
 
     <p class="lead">Where authenticated users can ask questions and receive off-topic answers.</p>
 
-    <% unless logged_in? %>
-      <a class="btn btn-primary btn-lg" href="/users/new" role="button">Sign up now!</a>
+    <% if logged_in? %>
+      <%= link_to "Ask a question!", '/questions/new', class: "btn btn-primary btn-lg" %>
     <% else %>
-      <a class="btn btn-success btn-lg" href="/questions/new" role="button">Ask a question!</a>
+      <%= link_to  "Sign up now!", new_user_path, class: "btn btn-primary btn-lg" %>
     <% end %>
 
   </div>
 
-<img src="/images/cat_overflow.jpg" class="img-fluid" alt="Responsive cat">
+<%= image_tag "cat_overflow.jpg", class: "img-fluid", alt: 'responsive cat' %>
