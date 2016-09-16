@@ -3,7 +3,7 @@ class QuestionContainer extends React.Component {
     return (
       <div className="question-container">
         <QuestionBody details={this.props.details} />
-        <CommentsContainer />
+        <CommentsContainer comments={this.props.details.comments}/>
       </div>
     )
   }

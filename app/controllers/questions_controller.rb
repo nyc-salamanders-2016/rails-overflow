@@ -6,9 +6,8 @@ class QuestionsController < ApplicationController
 
   def show
     question = Question.find(params[:id])
-    @question = question.as_json
-    @question_score = question.score
-    @question_username = question.user.username
+    @question = question.as_json(methods: [:score, :user], include: {comments: {include: :user}} )
+    @answers = question.answers.as_json(methods: [:score, :user], include: {comments: {include: :user}} )
     # @answers = @question.answers.order(best_answer: :desc, created_at: :desc)
     # HOW TO ORDER BY SCORE? I.E., get_score(question)
     # render 'questions/show'

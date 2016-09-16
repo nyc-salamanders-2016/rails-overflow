@@ -1,18 +1,26 @@
 class CommentsContainer extends React.Component {
   constructor() {
     super()
-    this.listComments = this.listComments.bind(this)
+    // this.listComments = this.listComments.bind(this)
   }
-  listComments() {
-    if (null) {
-      return <CommentBody />
-    }
-  }
+
+  // listComments() {
+  //   if (null) {
+  //     return <CommentBody />
+  //   }
+  // }
+
   render() {
+    let comments
+    if (this.props.comments) {
+        comments = this.props.comments.map((comment, i) => {
+        return <CommentBody data={comment} key={i}/>
+      })
+    }
     return (
       <div>
-        {this.listComments()}
         <NewCommentForm />
+        {comments}
       </div>
     )
   }

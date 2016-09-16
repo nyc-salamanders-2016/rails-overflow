@@ -11,4 +11,5 @@ class Comment < ApplicationRecord
       self.errors << [:commentable, "Can't comment on itself"]
     end
   end
+
 end

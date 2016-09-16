@@ -1,7 +1,8 @@
 class AnswersContainer extends React.Component {
   render() {
-    // iterate through all answers and add them to this
-    answers = <Answer />
+    let answers = this.props.answers.map((answer, i) => {
+      return <Answer data={answer} key={i}/>
+    })
     return(
       <div className="answers-container">
         {answers}

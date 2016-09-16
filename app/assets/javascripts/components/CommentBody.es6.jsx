@@ -2,8 +2,8 @@ class CommentBody extends React.Component {
   render() {
     return (
       <div>
-        <p>this is comment</p>
-        <p>- Your Mom </p>
+        <p>{this.props.data.body}</p>
+        <p>- {this.props.data.user.username} </p>
         <CommentsContainer />
       </div>
     )
