@@ -4,14 +4,20 @@ class AnswerForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleSubmit() {
-    // ajax stuff
+  handleSubmit(event) {
+    debugger
+    event.preventDefault()
+    $.ajax({
+      url: event.target.action,
+      method: event.target.method,
+      data: $(event.target).serialize()
+    })
   }
 
   render() {
     return(
       <form onSubmit={this.handleSubmit} method="post" action="/questions/1/answers">
-        <textarea placeholder="Answer this question" />
+        <textarea ref="answer" placeholder="Answer this question" name="body" />
         <button type="submit">Submit new answer</button>
       </form>
     )
