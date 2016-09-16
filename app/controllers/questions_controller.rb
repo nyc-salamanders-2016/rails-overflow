@@ -5,10 +5,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    @answers = @question.answers.order(best_answer: :desc, created_at: :desc)
+    @question = Question.find(params[:id]).as_json
+    # @answers = @question.answers.order(best_answer: :desc, created_at: :desc)
     # HOW TO ORDER BY SCORE? I.E., get_score(question)
-    render 'questions/show'
+    # render 'questions/show'
   end
 
   def new
@@ -59,4 +59,3 @@ private
   end
 
 end
-
