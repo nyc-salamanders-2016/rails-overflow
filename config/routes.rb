@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     resources :answers, only: [:new, :create]
   end
 
-  resources :answers, only: [:new, :create ], concerns: :commentable
+  resources :answers, only: [:show], concerns: :commentable
 
 end
