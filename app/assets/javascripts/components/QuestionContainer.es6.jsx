@@ -2,7 +2,7 @@ class QuestionContainer extends React.Component {
   render() {
     return (
       <div className="question-container">
-        <QuestionBody />
+        <QuestionBody details={this.props.details} />
         <CommentsContainer />
       </div>
     )

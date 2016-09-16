@@ -1,6 +1,6 @@
 class QuestionBody extends React.Component {
   render() {
-    const { title, score, username, body } = { title: "what is a man", score: "-20", username: "harrison", body: "lorem ipsum I hate latin" }
+    const { title, score, username, body } = this.props.details
     return(
       <div className="question-details">
         <div className="page-header">
