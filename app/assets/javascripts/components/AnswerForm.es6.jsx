@@ -13,6 +13,8 @@ class AnswerForm extends React.Component {
     })
     .done((response) => {
       this.props.onUpdate(response)
+      this.refs.answer.value = ""
+      this.refs.answer.focus()
     } )
   }
 

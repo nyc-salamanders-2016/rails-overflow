@@ -13,13 +13,15 @@ class NewCommentForm extends React.Component {
     })
     .done((response) => {
       this.props.onUpdate(response)
+      this.refs.comment.value = ""
+      this.refs.comment.focus()
     } )
   }
 
   render () {
     return (
       <form className="new-comment-form" onSubmit={this.handleSubmit} method="post" action={`/${this.props.type}s/${this.props.id}/comments`}>
-        <input type="text" placeholder="create a new comment" name="body"/>
+        <input ref="comment" type="text" placeholder="create a new comment" name="body"/>
         <button type="submit">Submit new comment</button>
       </form>
     )
