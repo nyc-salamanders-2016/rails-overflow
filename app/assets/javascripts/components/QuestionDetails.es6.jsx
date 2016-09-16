@@ -1,4 +1,5 @@
 class QuestionDetails extends React.Component {
+
   render() {
 
     return (
@@ -7,8 +8,7 @@ class QuestionDetails extends React.Component {
           {JSON.stringify(this.props, null, 4)}
         </code></pre>
         <QuestionContainer details={this.props.details} />
-        <AnswerForm />
-        <AnswersContainer answers={this.props.answers}/>
+        <AnswersContainer answers={this.props.answers} questionId={this.props.details.id}/>
       </div>
     )
   }

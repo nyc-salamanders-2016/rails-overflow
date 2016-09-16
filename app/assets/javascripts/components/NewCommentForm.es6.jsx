@@ -16,7 +16,7 @@ class NewCommentForm extends React.Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit} method="post" action={this.getCommentPath}>
-        <textarea placeholder="create a new comment" />
+        <input type="text" placeholder="create a new comment" />
         <button type="submit">Submit new comment</button>
       </form>
     )
